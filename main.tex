@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+
+% Language setting
+\usepackage[english, ngerman]{babel}
+
+% Set page size and margins
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+% Set font
+\usepackage{fontspec}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\setmainfont{Arial}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+
+% Pagenumbers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+\setlength{\parindent}{0pt}
+
+% Set Space
+\usepackage[onehalfspacing]{setspace}
+
+% New page per Section
+\AddToHook{cmd/section/before}{\clearpage}
+
+% Set bibliography and citations
+\usepackage[
+backend=biber,
+style=authoryear,
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage{csquotes}
+
+\usepackage{blindtext}
+
+% Environment for Centered Titles
+\newenvironment{centeredtitles}
+    {
+    \titleformat*{\section}{\large\bfseries\filcenter}
+    }
+
+% Include Images
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{float}
+\usepackage[font=small]{caption}
+\usepackage{subcaption}
+\captionsetup[figure]{name={Abb.},{width=.4\linewidth}}
+
+\usepackage[]{pdfpages}
+%\usepackage{showframe}
+
+% Reduziert Hyphens (also Wortumbrüche)
+\tolerance=9999
+\emergencystretch=10pt
+\hyphenpenalty=10000
+\exhyphenpenalty=100
+
+\RequirePackage[]{microtype}                                        % Verbesserung mikrotypografischer Einstellungen
+\RequirePackage[all]{hypcap}                                    % Korrigiert Anker zu Floats
+
+\begin{document}
+\pagenumbering{gobble} % Disable Pagenumbers
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{Abbildungen/UXP_Unidad_Popular.png}\par
+    \vspace{1cm}
+	%{\Large{Bachelorarbeit}\par}
+	%\vspace{0.5cm}
+	{\Large{Linkes Manifest nach Nico Lindenlauf und Jessica Kuschel}\par}
+	\vspace{2cm}
+    {\LARGE\bfseries Guide zur Aufklärung\par}
+    {\LARGE\bfseries oder\par}
+    {\LARGE\bfseries Warum wir Linksextremisten sind\par}
+    {\LARGE\bfseries oder\par}
+    {\LARGE\bfseries Linksextremismus für Dummies\par}
+	\vspace{2cm}
+	{\Large{Ein Kollaboratives experiment als Recource für ein menschenfreundliches Weltbild}\par}
+	\vfill
+	{\Large Ausgabe vom: \today}
+\end{titlepage}
+
+\begin{center}
+    \large\bfseries Zusammenfassung
+\end{center}
+Joa wir sind gefiickt, nh?\\ \\
+Keywords: kw1, kw2, kw3, kw4
+
+\begin{centeredtitles}
+    \tableofcontents
+    \listoffigures
+\end{centeredtitles}
+
+\newpage
+\pagenumbering{arabic} % Enable Pagenumbers
+
+\section{Einleitung}
+\blindtext
+
+\subsection{Problemstellungen}
+linke meinungen in der bevölkerung kaum noch existen
+
+faktenbasierte argumentation nicht möglich
+
+kaum möglich menschen zu ùberze7gen
+
+\subsection{Zielsetzung}
+wie wir linke themen wieder unter die leute bringen
+
+linken einen leitfaden an die hand geben
+
+git basierter informationsstand
+
+sich nicht unterwandern lassen
+
+\subsection{Aufbau der Arbeit}
+\blindtext
+
+\section{Theoretische Fundierung}
+\blindtext
+
+\section{Fazit}
+Gefiickt sind wir trotzdem
+
+\newpage
+\begin{centeredtitles}
+    \section*{Literaturverzeichnis}
+    \addcontentsline{toc}{section}{\protect\numberline{}Literaturverzeichnis}
+    \printbibliography[heading=none]
+\end{centeredtitles}
+
+\newpage
+\begin{centeredtitles}
+    \section*{Anhang}
+    \addcontentsline{toc}{section}{\protect\numberline{}Anhang}
+\end{centeredtitles}
+
+\textbf{Anhang A: Online-Umfrage}\\
+
+\blindtext
+
+\end{document}
